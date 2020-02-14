@@ -7,6 +7,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    #Helps in adding new values
     def append(self, value):
         newNode = Node(value)
         #if self.head==None:
@@ -15,6 +16,7 @@ class LinkedList:
         newNode.next = self.head
         self.head = newNode
 
+    #Helps in adding value after specific index
     def appendAfter(self, index, value):
         newNode = Node(value)
         temp = self.head
@@ -24,6 +26,7 @@ class LinkedList:
         newNode.next = temp.next
         temp.next = newNode
 
+    #Helps in printing values of List
     def println(self):
         if self.head==None:
             return
