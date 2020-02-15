@@ -1,8 +1,10 @@
 from LinkedList import *
 ll = LinkedList()
 n = int(input())
-for _ in range(n):
-    ll.append(int(input()))
+for x in range(n):
+    ll.append(x)
 
-ll.appendAfter(3, 101)
+# ll.appendAfter(3, 101)
+ll.println()
+ll.reverse()
 ll.println()

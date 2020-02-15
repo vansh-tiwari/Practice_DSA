@@ -26,11 +26,20 @@ class LinkedList:
         newNode.next = temp.next
         temp.next = newNode
 
+    def reverse(self):
+        prev = None
+        cur = self.head
+        while cur != None:
+            nextNode = cur.next
+            cur.next = prev
+            prev = cur
+            cur = nextNode
+        self.head = prev
+
     #Helps in printing values of List
     def println(self):
-        if self.head==None:
-            return
         temp = self.head
         while temp:
-            print(temp.value)
+            print(temp.value, end=" ")
             temp = temp.next
+        print()
