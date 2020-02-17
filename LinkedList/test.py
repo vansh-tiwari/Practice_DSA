@@ -1,5 +1,8 @@
 from LinkedList import *
+from DoublyLinkedList import *
+
 ll = LinkedList()
+dll = DoublyLinkedList()
 
 #No. to input in list
 n = int(input())

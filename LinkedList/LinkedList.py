@@ -82,6 +82,7 @@ class LinkedList:
             count+=1
         print()
     
+    #Count the nodes in List
     def length(self):
         temp = self.head
         count = 0
