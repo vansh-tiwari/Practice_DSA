@@ -75,7 +75,17 @@ class LinkedList:
     #Helps in printing values of List
     def println(self):
         temp = self.head
+        count = 0
         while temp:
             print(temp.value, end=" ")
             temp = temp.next
+            count+=1
         print()
+    
+    def length(self):
+        temp = self.head
+        count = 0
+        while temp:
+            temp = temp.next
+            count+=1
+        print(count)
