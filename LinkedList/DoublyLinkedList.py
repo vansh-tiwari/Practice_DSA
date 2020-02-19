@@ -13,7 +13,9 @@ class DoublyLinkedList:
         newNode = Dnode(value)
         newNode.next = self.head
         newNode.prev = None
-        if self.head != None:
+        if self.head == None:
+            self.tail = newNode
+        else:
             self.head.prev = newNode
         self.head = newNode
 
@@ -22,12 +24,19 @@ class DoublyLinkedList:
             return
         temp = self.head
         while temp!=None:
-            last = temp
+            # last = temp
             print(temp.value, end=" ")
             temp = temp.next
         print()
-        while last!=None:
-            print(last.value, end=" ")
-            last = last.prev
+        
+    def rev(self):
+        # while last!=None:
+        #     print(last.value, end=" ")
+        #     last = last.prev
+        # print()
+        revtemp = self.tail
+        while revtemp!=None:
+            print(revtemp.value, end=" ")
+            revtemp = revtemp.prev
         print()
         

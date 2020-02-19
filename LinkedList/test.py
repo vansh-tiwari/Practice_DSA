@@ -1,5 +1,5 @@
-from LinkedList import *
-from DoublyLinkedList import *
+from LinkedList import LinkedList
+from DoublyLinkedList import DoublyLinkedList
 
 ll = LinkedList()
 dll = DoublyLinkedList()
@@ -18,3 +18,4 @@ for x in range(n):
 # ll.println()
 # ll.length()
 dll.println()
+dll.rev()
