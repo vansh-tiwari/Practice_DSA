@@ -29,13 +29,14 @@ class DoublyLinkedList:
             temp = temp.next
         print()
         
-    def rev(self):
+    def rev_println(self):
         # while last!=None:
         #     print(last.value, end=" ")
         #     last = last.prev
         # print()
         revtemp = self.tail
         while revtemp!=None:
+            # revtemp.value+=10
             print(revtemp.value, end=" ")
             revtemp = revtemp.prev
         print()

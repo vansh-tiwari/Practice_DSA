@@ -18,4 +18,4 @@ for x in range(n):
 # ll.println()
 # ll.length()
 dll.println()
-dll.rev()
+dll.rev_println()
