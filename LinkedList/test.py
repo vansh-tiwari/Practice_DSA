@@ -9,13 +9,13 @@ n = int(input())
 
 #Inserting in order
 for x in range(n):
-    dll.insertFirst(x)
+    ll.insertFirst(x)
 
 # ll.insertAfter(4, 1229)
-# ll.insertLast(25000)
+# ll.insertFirst()
 # ll.reverse()
 # ll.deleteFirst()
-# ll.println()
+ll.println()
 # ll.length()
-dll.println()
-dll.rev_println()
+# dll.println()
+# dll.rev_println()
