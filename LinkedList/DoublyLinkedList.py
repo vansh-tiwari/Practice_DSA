@@ -19,6 +19,16 @@ class DoublyLinkedList:
             self.head.prev = newNode
         self.head = newNode
 
+    #Incomplete
+    # def onezero(self):
+    #     zero = self.head
+    #     one = self.tail
+    #     while zero!=None or one!=None:
+    #         if zero.value==0:zero=zero.next
+    #         if one.value==1: one=one.prev
+    #         if zero.value==1 and one.value==0:
+    #             zero.value, one.value = one.value, zero.value
+
     def println(self):
         if self.head == None:
             return
