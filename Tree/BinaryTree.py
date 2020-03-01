@@ -8,30 +8,37 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def insert(self, data):
-        newNode = Node(data)
+    def insert(self, tempNode, val):
+        newNode = Node(val)
+        #RECURSIVE APPROACH
+        if tempNode is None: return newNode
+        if val < tempNode.data: tempNode.left = self.insert(tempNode.left, val)
+        else: tempNode.right = self.insert(tempNode.right, val)
+        return tempNode
+        
+        #ITERATIVE APPROACH
         # print("newNode with value {} is created".format(newNode.data))
-        if self.root == None:
-            self.root = newNode
-            # print("Root is None and pointed to newNode with value {} is created".format(newNode.data))
-            return self.root
-        else:
-            cur = self.root
-            while(True):
-                if data < cur.data:
-                    #Left
-                    # print("Left {}".format(cur.data))
-                    if(cur.left is None):
-                        cur.left = newNode
-                        return self.root
-                    cur = cur.left
-                else:
-                    #Right
-                    # print("Right {}".format(cur.data))
-                    if(cur.right is None):
-                        cur.right = newNode
-                        return self.root
-                    cur = cur.right
+        # if self.root == None:
+        #     self.root = newNode
+        #     # print("Root is None and pointed to newNode with value {} is created".format(newNode.data))
+        #     return self.root
+        # else:
+        #     cur = self.root
+        #     while(True):
+        #         if data < cur.data:
+        #             #Left
+        #             # print("Left {}".format(cur.data))
+        #             if(cur.left is None):
+        #                 cur.left = newNode
+        #                 return self.root
+        #             cur = cur.left
+        #         else:
+        #             #Right
+        #             # print("Right {}".format(cur.data))
+        #             if(cur.right is None):
+        #                 cur.right = newNode
+        #                 return self.root
+        #             cur = cur.right
 
     def search(self, tempNode, val):
         if tempNode is None:
