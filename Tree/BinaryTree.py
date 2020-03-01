@@ -13,7 +13,7 @@ class BinaryTree:
         # print("newNode with value {} is created".format(newNode.data))
         if self.root == None:
             self.root = newNode
-            # print("Root is None, newNode with value {} is created".format(newNode.data))
+            # print("Root is None and pointed to newNode with value {} is created".format(newNode.data))
             return self.root
         else:
             cur = self.root
@@ -32,8 +32,21 @@ class BinaryTree:
                         cur.right = newNode
                         return self.root
                     cur = cur.right
+
+    def search(self, tempNode, val):
+        if tempNode is None:
+            print("False")
+            return
+        temp = tempNode
+        if val < temp.data: self.search(temp.left, val)
+        elif val > temp.data: self.search(temp.right, val)
+        elif val==temp.data:
+            print("True")
+            return
+        else: return
     
-    def preOrder(self, temp):
+    def preOrder(self, tempNode):
+        temp = tempNode
         if temp is None:
             return
         print("[{}]".format(temp.data))
@@ -45,7 +58,8 @@ class BinaryTree:
             self.preOrder(temp.right)
 
 
-    def inOrder(self, temp):
+    def inOrder(self, tempNode):
+        temp = tempNode
         if temp is None:return
         if temp.left is not None:
             print("Left {}  ".format(temp.data), end="-> ")
@@ -56,7 +70,8 @@ class BinaryTree:
             self.inOrder(temp.right)
 
 
-    def postOrder(self, temp):
+    def postOrder(self, tempNode):
+        temp = tempNode
         if temp is None:return
         if temp.left is not None:
             print("Left {}  ".format(temp.data), end="-> ")
