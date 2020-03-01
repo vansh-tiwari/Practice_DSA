@@ -15,7 +15,7 @@ class BinaryTree:
         if val < tempNode.data: tempNode.left = self.insert(tempNode.left, val)
         else: tempNode.right = self.insert(tempNode.right, val)
         return tempNode
-        
+
         #ITERATIVE APPROACH
         # print("newNode with value {} is created".format(newNode.data))
         # if self.root == None:
@@ -87,3 +87,26 @@ class BinaryTree:
             print("Right {}  ".format(temp.data), end="-> ")
             self.postOrder(temp.right)
         print("[{}]".format(temp.data))
+
+    def delete(self, tempNode, val):
+        head = tempNode
+        if head is None: return
+        if val < head.data: head.left=self.delete(head.left, val)
+        elif val > head.data: head.right=self.delete(head.right, val)
+        else:
+            if head.left is None:
+                temp = head.right
+                head = None
+                return temp
+            elif head.right is None:
+                temp = head.left
+                head = None
+                return temp
+            
+            temp = head.right
+            while temp.left is not None:
+                temp = temp.left
+            
+            head.data = temp.data
+            head.right = self.delete(head.right, temp.data)
+        return head
