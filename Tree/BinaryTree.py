@@ -88,8 +88,8 @@ class BinaryTree:
             self.postOrder(temp.right)
         print("[{}]".format(temp.data))
 
-    def delete(self, tempNode, val):
-        head = tempNode
+    def delete(self, nodeToDelete, val):
+        head = nodeToDelete
         if head is None: return
         if val < head.data: head.left=self.delete(head.left, val)
         elif val > head.data: head.right=self.delete(head.right, val)
