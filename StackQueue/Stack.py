@@ -29,4 +29,29 @@ class Stack:
             print(temp.value, end=" ")
             temp = temp.next
         print()
-        
+
+# =======================        
+# using collecions module
+# =======================
+
+class stack():
+	def __init__(self):
+		self.container = deque()
+	
+	def push(self, data):
+		self.container.append(data)
+	
+	def pop(self):
+		self.container.pop()
+
+	def printStack(self):
+		print(self.container)			
+
+if __name__ == '__main__':
+	from collections import deque
+	qu = stack()
+	qu.push('hello friend')
+	qu.push('I hope you can see this')
+	qu.push('fsociety.dat')
+	qu.pop()
+	qu.printStack()
